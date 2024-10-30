@@ -1,10 +1,5 @@
-interface Todo {
-  id: string,
-  title: string,
-  completed: boolean
-}
-
-type Todos = Array<Todo>
+import { Todos } from "../types"
+import { Todo } from "./Todo"
 
 interface Props {
   todos: Todos
@@ -13,7 +8,14 @@ interface Props {
 export const TodoList: React.FC<Props> = ({todos}) => {
   return (
     <ul>
-      {todos.map((e) => {return <li key={e.id}>{e.title}</li>})}
+      {todos.map((t) => {return <li key={t.id}>
+        <Todo
+          key={t.id}
+          id={t.id}
+          title={t.title}
+          completed={t.completed}
+        />
+      </li>})}
     </ul>
   )
 }
