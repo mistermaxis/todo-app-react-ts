@@ -1,8 +1,5 @@
 :root {
   background-color: grey;
-}
-
-.unselectable {
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
