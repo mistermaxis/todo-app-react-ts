@@ -1,7 +1,8 @@
 import { TodoList } from "./components/TodoList";
 import "./App.css";
+import { useState } from "react";
 
-const todos = [
+const testTodos = [
   {
     id: '1',
     title: 'acostarme a las 10 pm',
@@ -11,11 +12,13 @@ const todos = [
   {
     id: '2',
     title: 'levantarme a las 7 am',
-    completed: false,
+    completed: true,
   }
 ]
 
 const App = () : JSX.Element => {
+  const [todos] = useState(testTodos)
+
   return (
     <div>
       <header>Todo App React Typescript</header>
