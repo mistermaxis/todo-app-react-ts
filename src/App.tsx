@@ -17,12 +17,17 @@ const testTodos = [
 ]
 
 const App = () : JSX.Element => {
-  const [todos] = useState(testTodos)
+  const [todos, setTodos] = useState(testTodos)
+
+  const handleRemove = (id: string) => {
+    const newTodos = todos.filter(todo => todo.id !== id)
+    setTodos(newTodos)
+  }
 
   return (
     <div>
       <header>Todo App React Typescript</header>
-      <TodoList todos={todos}></TodoList>
+      <TodoList todos={todos} onRemoveTodo={handleRemove}/>
     </div>
   )
 }
